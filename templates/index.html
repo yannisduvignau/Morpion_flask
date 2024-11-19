@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="menu active">
+        <h1>Bienvenue au Tic-Tac-Toe</h1>
+        <p>Choisissez un mode de jeu :</p>
+        <div class="btns">
+            <button onclick="choisirMode('ia')">
+                <span class="material-icons">smart_toy</span> Jouer contre l'IA
+            </button>
+            <button onclick="choisirMode('joueur')">
+                <span class="material-icons">group</span> Jouer contre un autre joueur
+            </button>
+        </div>
+    </div>
+
+    <div class="plateau-container">
+        <h1>Tic-Tac-Toe</h1>
+        <div id="plateau" class="plateau">
+            <!-- Plateau généré dynamiquement -->
+        </div>
+        <p id="message">Tour en cours...</p>
+        <div class="btns">
+            <Button variant="contained" onclick="reinitialiser()">
+                <span class="material-icons">refresh</span> Recommencer
+            </Button>
+            <button onclick="retourMDJ()">
+                <span class="material-icons">home</span> Retour au menu principal
+            </button>
+        </div>
+    </div>
+
+    <div id="scores" class="scores">
+        <h2>Scores</h2>
+        <div>Joueur X : <span id="score-x">0</span></div>
+        <div>Joueur O : <span id="score-o">0</span></div>
+        <div>Matchs nuls : <span id="score-nul">0</span></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
